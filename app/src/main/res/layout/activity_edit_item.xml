@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
         android:ems="10"
-        android:id="@+id/editText"
+        android:id="@+id/edtValue"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -27,8 +27,8 @@
         android:layout_marginRight="27dp"
         android:layout_marginEnd="27dp"
         android:layout_marginTop="39dp"
-        android:layout_below="@+id/editText"
-        android:layout_alignRight="@+id/editText"
-        android:layout_alignEnd="@+id/editText" />
+        android:layout_below="@+id/edtValue"
+        android:layout_alignRight="@+id/edtValue"
+        android:layout_alignEnd="@+id/edtValue" />
 
 </RelativeLayout>

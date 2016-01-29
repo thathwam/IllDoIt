@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 public class EditItemActivity extends AppCompatActivity {
 
@@ -11,6 +12,12 @@ public class EditItemActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_item);
+
+        int position = getIntent().getIntExtra("position", 0);
+        String value = getIntent().getStringExtra("value");
+
+        EditText edtValue = (EditText) findViewById(R.id.edtValue);
+        edtValue.setText(value);
     }
 
     @Override
