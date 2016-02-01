@@ -29,6 +29,8 @@
         android:layout_marginTop="39dp"
         android:layout_below="@+id/edtValue"
         android:layout_alignRight="@+id/edtValue"
-        android:layout_alignEnd="@+id/edtValue" />
+        android:layout_alignEnd="@+id/edtValue"
+        android:nestedScrollingEnabled="false"
+        android:onClick="onClickSave" />
 
 </RelativeLayout>

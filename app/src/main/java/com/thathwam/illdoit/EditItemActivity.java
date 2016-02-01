@@ -1,9 +1,11 @@
 package com.thathwam.illdoit;
 
-import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 
 public class EditItemActivity extends AppCompatActivity {
@@ -40,5 +42,17 @@ public class EditItemActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClickSave(View view) {
+        EditText etName = (EditText) findViewById(R.id.MainActivity);
+        // Prepare data intent
+        Intent data = new Intent();
+        // Pass relevant data back as a result
+        data.putExtra("name", etName.getText().toString());
+        data.putExtra("code", 200); // ints work too
+        // Activity finished ok, return the data
+        setResult(RESULT_OK, data); // set result code and bundle data for response
+        finish(); // closes the activity, pass data to parent
     }
 }
