@@ -10,12 +10,14 @@ import android.widget.EditText;
 
 public class EditItemActivity extends AppCompatActivity {
 
+    private int position;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_item);
 
-        int position = getIntent().getIntExtra("position", 0);
+        position = getIntent().getIntExtra("position", 0);
         String value = getIntent().getStringExtra("value");
 
         EditText edtValue = (EditText) findViewById(R.id.edtValue);
@@ -45,12 +47,12 @@ public class EditItemActivity extends AppCompatActivity {
     }
 
     public void onClickSave(View view) {
-        EditText etName = (EditText) findViewById(R.id.MainActivity);
+        EditText etName = (EditText) findViewById(R.id.edtValue);
         // Prepare data intent
         Intent data = new Intent();
         // Pass relevant data back as a result
-        data.putExtra("name", etName.getText().toString());
-        data.putExtra("code", 200); // ints work too
+        data.putExtra("value", etName.getText().toString());
+        data.putExtra("position", position);
         // Activity finished ok, return the data
         setResult(RESULT_OK, data); // set result code and bundle data for response
         finish(); // closes the activity, pass data to parent
